@@ -1,24 +1,24 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
-  "name": "login_leature", 
+  "name": "login_leature",
   "version": "1.0.0",
   "main": "app.js",
   "bin": {
     "login_leature": "bin/www.js"
   },
-  "devDependencies": {},
   "scripts": {
-    "start" : "pm2 start ./bin/www.js",
+    "start": "pm2 start ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "description": "",
-  "repository" : {
-    "type" : "git",
-    "url" : ""
+  "repository": {
+    "type": "git",
+    "url": ""
   }
 }
