@@ -11,11 +11,15 @@ const id = document.querySelector("#id"),
 registerBtn.addEventListener("click",register);
 
 function register() {
+    // id 가 비어있을 경우 경고창 표시
+    if(!id.value) return alert("아이디를 입력해주십시오.")
+    // 비밀번호가 일치하지 않는 경우 경고창 표시
+    if (password.value !== confirmPassword.value) return alert("비밀번호가 일치하지 않습니다.")
+
     const req = {
         id : id.value,
         name : name.value,
         password : password.value,
-        confirmPassword : confirmPassword.value,
     };
 
     fetch("/register", {
