@@ -2,7 +2,11 @@
 
 // express 사용해보기, 모듈
 const express = require('express');
+const dotenv = require("dotenv");
 const app = express();
+
+// 환경 변수 (윈도우, 맥, 리눅스) 
+dotenv.config();
 
 // 라우팅
 const home = require("./src/routes/home")
