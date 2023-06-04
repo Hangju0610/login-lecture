@@ -9,6 +9,11 @@ loginBtn = document.querySelector("#button");
 loginBtn.addEventListener("click",login);
 
 function login() {
+    // id 가 비어있을 경우 경고창 표시
+    if(!id.value) return alert("아이디를 입력해주십시오.")
+    // 비밀번호가 일치하지 않는 경우 경고창 표시
+    if (!password.value) return alert("비밀번호를 입력해주십시오.");
+
     const req = {
         id : id.value,
         password : password.value,
@@ -26,6 +31,7 @@ function login() {
         if (res.success) { // 성공시 / 경로로 이동
             location.href = ("/")
         } else { // 실패시 알람 띄우기
+            if (res.err) return alert(res.err);
             alert(res.msg);
         }
     })
