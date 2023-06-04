@@ -1,7 +1,7 @@
 'use strict';
 
 const {createLogger, transports, format } = require("winston");
-const {combine, timestamp, json, simple, colorize, printf, label} = format;
+const {combine, timestamp, simple, colorize, printf, label} = format;
 
 const printFormat = printf(({timestamp,label, message, level}) => {
    return `${timestamp} [${label}] ${level} : ${message}`;
