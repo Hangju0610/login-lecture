@@ -10,7 +10,7 @@ class UserStorage {
     //reject = 내부 함수가 실패했을 경우 반환
     static getUserInfo(id){
         return new Promise((resolve, reject) => {
-            const query = "SELECT * FROM abc WHERE ID = ?;";
+            const query = "SELECT * FROM users WHERE ID = ?;";
             db.query(query, [id],(err,data) =>{
                 if(err) reject(`${err}`);
                 else resolve(data[0]);
@@ -20,7 +20,7 @@ class UserStorage {
 
     static async save(userInfo) {
         return new Promise((resolve, reject) => {
-            const query = "INSERT INTO fasd (id, name, password) VALUES(?, ?, ?);";
+            const query = "INSERT INTO users (id, name, password) VALUES(?, ?, ?);";
             db.query(query, [userInfo.id, userInfo.name, userInfo.password],(err) =>{
                 if(err) reject(`${err}`);
                 else resolve({ success : true});
